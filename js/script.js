@@ -16,6 +16,8 @@ documentHeight()
 // sections control
 const home = document.getElementById('home');
 const secHome = document.getElementById('secHome');
+const about = document.getElementById('about');
+const secAbout = document.getElementById('secAbout');
 const projects = document.getElementById('projects');
 const secProjects = document.getElementById('secProjects');
 const contact = document.getElementById('contact');
@@ -25,14 +27,23 @@ home.onclick = function () {
    secHome.classList.add('active');
    secProjects.classList.remove('active');
    secContact.classList.remove('active');
+   secAbout.classList.remove('active');
+};
+about.onclick = function () {
+   secProjects.classList.remove('active');
+   secHome.classList.remove('active');
+   secContact.classList.remove('active');
+   secAbout.classList.add('active');
 };
 projects.onclick = function () {
    secProjects.classList.add('active');
    secHome.classList.remove('active');
    secContact.classList.remove('active');
+   secAbout.classList.remove('active');
 };
 contact.onclick = function () {
    secContact.classList.add('active');
    secHome.classList.remove('active');
    secProjects.classList.remove('active');
+   secAbout.classList.remove('active');
 };

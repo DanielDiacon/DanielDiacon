@@ -8,8 +8,8 @@
    <meta name="viewport"
       content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
    <!-- logo web site -->
-   <link rel="shortcut icon" href="img/d-logo.png">
-   <link rel="mainfest" href="img/d-logo.png">
+   <link rel="shortcut icon" href="img/mini-d-logo.png">
+   <link rel="mainfest" href="img/mini-d-logo.png">
    <!-- main color seb page -->
    <meta name="theme-color" content="#121212">
    <!-- description -->
@@ -34,7 +34,7 @@
    <script defer src="js/slick.min.js"></script>
    <script defer src="js/scroll-out.js"></script>
    <script defer src="js/bg.js"></script>
-   <title>Daniel</title>
+   <title>daniel</title>
 </head>
 
 <body>
@@ -58,17 +58,132 @@
             <nav class="menu__body" id="menu">
                <ul class="menu__list">
                   <li id="home" class="menu__item">Home</li>
+                  <li id="about" class="menu__item">About me</li>
                   <li id="projects" class="menu__item">Projects</li>
                   <li id="contact" class="menu__item">Contact</li>
                </ul>
             </nav>
          </div>
       </header>
-      
-      <section id="secHome" class="section section__1 active"></section>
-      <section id="secProjects" class="section section__2"></section>
-      <section id="secContact" class="section section__3"></section>
 
+      <section id="secHome" class="section home active">
+      </section>
+
+      <section id="secAbout" class="section about">
+         <div class="section__body">
+            <div class="about__title title">About ME</div>
+            <div class="about__text text">
+               My name is Daniel and I am a Frontend Developer. I started studying this field in 2021 at the age
+               of 16. I currently have several completed projects that you can view under "Projects". When creating
+               projects I use <span style="color: #e34c26;">HTML5</span> partly <span style="color: yellow;">JS</span>
+               and
+               <span style="color: #264de4;">CSS3</span>, but I prefer
+               <span style="color: #d3448c;">SCSS</span> and for the classification of elements in <span
+                  style="color: #e34c26;">HTML</span>
+               I use the <span style="color: #266fe4;">BEM</span> methodology for better optimization of web pages. I
+               can also do high quality adaptation and
+               good optimization.
+            </div>
+         </div>
+      </section>
+
+      <section id="secProjects" class="section projects">
+         <div class="section__body">
+            <ul class="projects__list">
+               <li class="projects__item project">
+                  <a target="_blank" href="https://danieldiacon.github.io/danieldiacon/" class="project__link">
+                     <div class="project__name title">daniel</div>
+                     <div class="project__data">29.01.2023</div>
+                  </a>
+               </li>
+
+               <li class="projects__item project">
+                  <a target="_blank" href="https://danieldiacon.github.io/BrichForest/" class="project__link">
+                     <div class="project__name title">BrichForest</div>
+                     <div class="project__data">10.01.2023</div>
+                  </a>
+               </li>
+
+               <li class="projects__item project">
+                  <a target="_blank" href="https://danieldiacon.github.io/AIArt/" class="project__link">
+                     <div class="project__name title">AIArt</div>
+                     <div class="project__data">01.01.2023</div>
+                  </a>
+               </li>
+
+               <li class="projects__item project">
+                  <a target="_blank" href="https://danieldiacon.github.io/Kebab/" class="project__link">
+                     <div class="project__name title">Kebab</div>
+                     <div class="project__data">20.10.2022</div>
+                  </a>
+               </li>
+
+               <li class="projects__item project">
+                  <a target="_blank" href="https://danieldiacon.github.io/WebD/" class="project__link">
+                     <div class="project__name title">WebD</div>
+                     <div class="project__data">12.07.2022</div>
+                  </a>
+               </li>
+
+            </ul>
+         </div>
+      </section>
+
+      <section id="secContact" class="section contact">
+         <div class="section__body">
+            <div class="contact__title title">
+               How to contact me.
+            </div>
+            <div class="contact__text text">
+               To contact me, you can choose one of the options in the lower right corner to send a message on Instagram
+               privately or on Gmail (to receive an answer as soon as possible contact Gmail).
+            </div>
+         </div>
+      </section>
+
+      <footer class="footer">
+         <div class="footer__copy text">
+            © 2023 daniel
+         </div>
+         <div class="footer__social-networks">
+            <a target="_blank" href="https://www.instagram.com/daniel.diacon.work/" class="footer__link">
+               <div class="footer__social">
+                  <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                     viewBox="0 0 256 256">
+                     <path fill="currentColor"
+                        d="M160 128a32 32 0 1 1-32-32a32.1 32.1 0 0 1 32 32Zm68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56Zm-52 44a48 48 0 1 0-48 48a48 48 0 0 0 48-48Zm16-52a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z" />
+                  </svg>
+                  <p class="footer__social-name">
+                     instagram
+                  </p>
+               </div>
+            </a>
+            <a target="_blank" href="https://github.com/DanielDiacon" class="footer__link">
+               <div class="footer__social">
+                  <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                     viewBox="0 0 32 32">
+                     <path fill="currentColor" fill-rule="evenodd"
+                        d="M16 2a14 14 0 0 0-4.43 27.28c.7.13 1-.3 1-.67v-2.38c-3.89.84-4.71-1.88-4.71-1.88a3.71 3.71 0 0 0-1.62-2.05c-1.27-.86.1-.85.1-.85a2.94 2.94 0 0 1 2.14 1.45a3 3 0 0 0 4.08 1.16a2.93 2.93 0 0 1 .88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4 5.4 0 0 1 1.44-3.76a5 5 0 0 1 .14-3.7s1.17-.38 3.85 1.43a13.3 13.3 0 0 1 7 0c2.67-1.81 3.84-1.43 3.84-1.43a5 5 0 0 1 .14 3.7a5.4 5.4 0 0 1 1.44 3.76c0 5.38-3.27 6.56-6.39 6.91a3.33 3.33 0 0 1 .95 2.59v3.84c0 .46.25.81 1 .67A14 14 0 0 0 16 2Z" />
+                  </svg>
+                  <p class="footer__social-name">
+                     github
+                  </p>
+               </div>
+            </a>
+            <a target="_blank" href="mailto:daniel.diacon.work@gmail.com" class="footer__link">
+               <div class="footer__social">
+                  <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                     viewBox="0 0 24 24">
+                     <path fill="currentColor"
+                        d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64z" />
+                  </svg>
+                  <p class="footer__social-name">
+                     gmail
+                  </p>
+               </div>
+            </a>
+         </div>
+      </footer>
    </div>
 </body>
 
