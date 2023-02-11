@@ -1,0 +1,317 @@
+// import fonts/font <=>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&display=swap');
+
+// default font / default font size <=>
+$fontFamily: 'Unbounded', cursive;
+$fontFamilyLogo: "Montserrat", sans-serif;
+$fontSize: 14;
+
+// base colors <=>
+$black: #111111;
+$white: #f5f5f5;
+$mainColor: #FFFD00;
+$index: calc(1vh + 1vw);
+$transition: cubic-bezier(.62,.37,.3,.79);
+
+//100vh mobile problem <=>
+:root {
+   --doc-height: 100%;
+}
+
+// max width for container <=>
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1250;
+
+// size gadjes for adapted and other <=>
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+
+// null style <=>
+@import "_null.scss";
+
+// general style <=>
+body {
+   overflow-x: hidden ;
+   min-height: -webkit-fill-available;
+   height: var(--doc-height);
+   line-height: 18px;
+   color: $black;
+   caret-color: $mainColor; // color bar write
+   font-family: $fontFamily;
+   font-size: $fontSize + px;
+   font-weight: 500;
+   //scroll block when open burger
+   .lock & {
+      overflow: hidden;
+      touch-action: none;
+   }
+}
+// wrapper <=>
+.wrapper {
+   min-height: -webkit-fill-available;
+   height: var(--doc-height);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+// for refresh on mobile 
+@media only screen and (max-width:$mobile) {
+   .wrapper::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 50px;
+   }
+}
+
+
+// container <=>
+.container {
+   max-width: $maxWidthContainer + px;
+   margin: 0 auto;
+   //fix for slider
+   > * {
+      min-width: 0;
+   }
+}
+
+// the footer to the bottom of the page <=>
+main {
+   flex: 1 1 auto;
+}
+
+// scroll bar <=>
+::-webkit-scrollbar {
+   display: none;
+}
+
+// when copu text<=>
+::selection {
+   color: $white;
+   background: $black;
+}
+
+//loading page style<=>
+.loader{
+   z-index: 200;
+   position: absolute;
+   width: 100%;
+   height: 100vh; 
+   background: $white;
+   transition: .5s;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   border: 9px solid $mainColor;
+   animation: spinner-bulqg1 0.8s infinite linear alternate,
+        spinner-oaa3wk 1.6s infinite linear;
+}
+@keyframes spinner-bulqg1 {
+   0% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+   }
+
+   12.5% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+   }
+
+   25% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+   }
+
+   50% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+   }
+
+   62.5% {
+      clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+   }
+
+   75% {
+      clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+   }
+
+   100% {
+      clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+   }
+}
+@keyframes spinner-oaa3wk {
+   0% {
+      transform: scaleY(1) rotate(0deg);
+   }
+
+   49.99% {
+      transform: scaleY(1) rotate(135deg);
+   }
+
+   50% {
+      transform: scaleY(-1) rotate(0deg);
+   }
+
+   100% {
+      transform: scaleY(-1) rotate(-135deg);
+   }
+}
+.bg{
+   position: fixed;
+   width:100%;
+   height:100%;
+   min-width: 1000px;
+   z-index: -1;
+   opacity: .8;
+   background-image: 
+      linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+      radial-gradient( 90% 100% at 50%  , rgb(200, 200, 200), rgb(0, 0, 0)), 
+      radial-gradient(100% 100% at  80% , rgb(255, 0, 208), rgb(036 000 000)), 
+      radial-gradient(150% 210% at 100% , rgb(020 175 125), rgb(0, 255, 170)), 
+      radial-gradient(100% 100% at 100% , rgb(0, 242, 255), rgb(000 200 255)), 
+      linear-gradient(60deg, rgb(0, 123, 255), rgb(0, 0, 0));
+   background-blend-mode: overlay, difference, difference, difference, normal;
+}
+.canvas {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+}
+
+.noise {
+     animation: grain 6s steps(10) infinite;
+     background-image: url('https://www.cinecasero.uy/img/noise-full.png');
+     background-repeat: repeat;
+     height: 300%;
+     left: -50%;
+     opacity: .035;
+     position: fixed;
+     top: -100%;
+     width: 300%;
+     z-index: 100;
+     pointer-events: none;
+ }
+ 
+ @keyframes grain {
+   0%, 100% {
+     transform: translate(0, 0);
+ }
+ 10% {
+     transform: translate(-5%, -10%);
+ }
+ 20% {
+     transform: translate(-15%, 5%);
+ }
+ 30% {
+     transform: translate(7%, -25%);
+ }
+ 40% {
+     transform: translate(-5%, 25%);
+ }
+ 50% {
+     transform: translate(-15%, 10%);
+ }
+ 60% {
+     transform: translate(15%, 0%);
+ }
+ 70% {
+     transform: translate(0%, 15%);
+ }
+ 80% {
+     transform: translate(3%, 35%);
+ }
+ 90% {
+     transform: translate(-10%, 10%);
+ }
+}
+ 
+// title  <=>
+.title {
+   font-weight: 800;
+   font-size:20px;
+   line-height: 1;
+   pointer-events: all;
+}
+
+// text  <=>
+.text {
+   pointer-events: all;
+}
+
+// footer <=>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   user-select: none;
+   z-index: 100px;
+   backdrop-filter: blur(2px);
+   color: $black;
+   &__copy{
+      @media only screen and (max-width:$mobile) {
+         padding: 5px;
+      }
+   }
+   &__social-networks {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+      text-transform: uppercase;
+   }
+   &__icon{
+      display: none;
+      font-size: 30px;
+      @media only screen and (max-width:$mobile) {
+         display: block;
+      }
+   }
+   &__social{
+      justify-content: center;
+      color: $black;
+      transition: .2s $transition;
+ 
+   }
+   &__social-name{
+      display: block;
+      @media only screen and (max-width:$mobile) {
+         display: none;
+      }
+   }
+   &__social:hover {
+      color: #000;
+      letter-spacing: 2px;
+   }
+}
+
+.its-old-site {
+   z-index: 3000;
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 200px;
+   padding: 15px;
+   margin: 15px;
+   border-radius: 15px;
+   background: $mainColor;
+}
+.new-daniel {
+   color: purple;
+   font-weight: 800; 
+   cursor: pointer;
+   pointer-events: all;
+   user-select: none;
+}
+
+//import scss modules<=>
+@import "_header.scss";
+@import "_sections.scss";
+@import "_not-found.scss";

@@ -1,0 +1,123 @@
+.section {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: var(--doc-height);
+   width: 100%;
+   pointer-events: none;
+   transition: .3s $transition;
+   opacity: 0;
+   visibility: hidden;
+   &.active{
+      pointer-events: all;
+      opacity: 1;
+      visibility: visible;
+      backdrop-filter: blur(2px);
+   }
+   &__body{
+      padding: 50px;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      @media only screen and (max-width:$mobileSmall) {
+         padding: 20px;
+         padding-top: 220px;
+      }
+   }
+}
+.section.home {
+   pointer-events:none;
+   background:none ;
+   visibility: visible;
+   backdrop-filter: blur(0px);
+}
+
+.about {
+   &__title {
+     padding-bottom: 20px;
+     font-size: calc($index * 1.4);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index * 2);
+      }
+   }
+   &__text{
+      opacity: .9;
+      line-height: 1.01;
+      font-size: calc($index / .9);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index / .7);
+      }
+   }
+}
+
+.projects {
+   .section__body{
+      width: 100%;
+      padding: 0px;
+      margin-right: 10px;
+   }
+   &__list {
+      height: calc(var(--doc-height) - 10px);
+      width:100%;
+      pointer-events: all;
+      z-index: 100;
+      overflow-y: scroll;
+   }
+   @media only screen and (max-width:$mobile) {
+      text-align-last: right;
+   }
+}
+.project {
+   &__link{
+      color: $black;
+   }
+   &:nth-child(1){
+      padding-top: 8%;
+      @media only screen and (max-width:$mobile) {
+         padding-top: 40%;
+      }
+   }
+   &:last-child{
+      padding-bottom: 50px;
+      
+   }
+   padding: 20px;
+   @media only screen and (max-width:$mobile) {
+      padding: 5px;
+   }
+   &__name {
+      font-size: calc($index * 1.8);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index * 2);
+      }
+   }
+   &__data {
+      opacity: 0.6;
+      font-size: calc($index / .9);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index / .7);
+      }
+   }
+}
+
+.contact {
+   &__title {
+      padding-bottom: 20px;
+      font-size: calc($index * 1.4);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index * 2);
+      }
+   }
+   &__text{
+      opacity: .9;
+      line-height: 1.01;
+      font-size: calc($index / .9);
+      @media only screen and (max-width:$mobile) {
+         font-size: calc($index / .7);
+      }
+   }
+}
+
